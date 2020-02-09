@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script src='script_q1.js'></script>
+    <!--<script data-main='script_q1.js' src='require.js'></script>-->
+    <style type="text/css">
+        ::placeholder {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body style="height: 100%;">
+  
+    <div style="vertical-align: middle; text-align: center; ">
+
+        <h2 style="background-color:antiquewhite; color: blueviolet;">Find your address</h2>
+        <form onsubmit="putValueInSession()" id="myForm">
+            <div class="d-flex flex-column col-xs-2 justify-content-center ">
+                <div class="col-xs-3"> <input type="text" id="name" placeholder="Full name" style="margin-top: 10px;"
+                        autofocus required>
+                </div>
+                <div>
+                    <input type="email" id="email" placeholder="Email" style="margin-top: 10px;">
+
+                </div>
+                <div>
+                    <input type="text" id="username" placeholder="username" style="margin-top: 10px;"
+                        pattern=".{4,}">
+                </div>
+                <div class="col-xs-4">
+                    <textarea rows="2" cols="40" id='location' placeholder="address" style="margin-top: 20px;"
+                        required></textarea>
+                    <!-- <input type="text" > -->
+
+                </div>
+            </div>
+            <div>
+
+                <!-- <button style="margin-top: 30px;" onclick="getNavigator()" >Click here</button>  -->
+
+                <button type="button" class="btn-success" onclick="getCoordinates()" style="margin-top: 20px;">Get
+                    Location</button>
+                <input type="submit" class="btn-primary">
+        </form>
+    </div>
+
+    <p style="color:blue" id="session"></p>
+    <p style="color:darkorange;" id="local"></p>
+    </div>
+    <script>
+        var form = document.getElementById("myForm");
+        function handleForm(event) { event.preventDefault(); }
+        form.addEventListener('submit', handleForm);
+    </script>
+</body>
+
+</html>
